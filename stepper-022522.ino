@@ -3,6 +3,9 @@
 // nema 17 bipolar motor with 200 steps per revolution draws 1.7 A at 2.8 V,
 // microstepping 1/16 is 2.5 microns per step
 
+// nema motor needs 1.7 Amps at 2.8V
+// stepper controler breakout board needs minimum 10 Volts
+
 const int stepsPerRevolution = 200;  // change this the steps/rev for your motor
 
 // initialize the stepper library on pins 8 through 11:
