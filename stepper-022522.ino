@@ -6,7 +6,7 @@
 const int stepsPerRevolution = 200;  // change this the steps/rev for your motor
 
 // initialize the stepper library on pins 8 through 11:
-Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
+Stepper myStepper(stepsPerRevolution, 2, 3); // Pin 2 connected to DIRECTION & Pin 3 connected to STEP Pin of Driver
 void setup() {
   // initialize the serial port:
   Serial.begin(9600);
