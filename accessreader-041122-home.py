@@ -1,6 +1,6 @@
 import pyodbc
 
-
+#https://sempioneer.com/python-for-seo/google-sheets-with-python/
 #THEN AFTER THIS ALL OF THE access database has then been turned into a google sheets
 #pass the dataframe through, into uhh 
 
