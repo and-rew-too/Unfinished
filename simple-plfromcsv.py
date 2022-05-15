@@ -10,13 +10,17 @@ newdf = pd.DataFrame(np.zeros([1024,1024]))
 sh_0, sh_1 = newdf.shape
 x, y = np.linspace(0, sh_0-1, sh_0), np.linspace(0, sh_1-1, sh_1)
 
-#for i in range(0,len(df.index)):
+
+# loops through csv file and third col is x position, fourth col is y position,
+# fifth col is the actual intensity, populate the newdf with intensity
 for i in range(0,100000):
-    a = df.iloc[i,2]
-    b = df.iloc[i,3]
-    newdf.iloc[a,b] = df.iloc[i,4]
+    a = df.iat[i,2]
+    b = df.iat[i,3]
+    newdf.iat[a,b] = df.iat[i,4]
 print(newdf)
 
+
+# plot figure using the x scaled previous, y scaled previously, z/newdf full of values
 fig = go.Figure(data=[go.Surface(z=newdf, x=x, y=y)])
 fig.update_layout(title='PL Image Intensity', autosize=False,
                   width=3000, height=3000,
