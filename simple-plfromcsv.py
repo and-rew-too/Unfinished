@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
 
+#FILE HERE https://mail.google.com/mail/u/3/#inbox/QgrcJHrnvFCxRfrgQNKHtTwQsVpVjZkJrVL
 df = pd.read_csv(r"C:\Users\andre\Downloads\2022 February 25 12_28_11.csv")
 pd.set_option('display.width', None)
 newdf = pd.DataFrame(np.zeros([1024,1024]))
