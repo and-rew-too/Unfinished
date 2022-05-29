@@ -86,11 +86,11 @@ print(workdf)
 # if true, then index the new column as the same part id
 # if false, then create new index number, as a new part id
 workdf.loc[:, 'partid,loop'] = 0
-for i in range(1, len(workdf.index)):
-    if workdf.iloc[i-1, 0].astype(int) < workdf.iloc[i, 0].astype(int):
-        workdf.iloc[i, 11] = workdf.iloc[i-1, 11]
+for o in range(1, len(workdf.index)):
+    if workdf.iloc[o-1, 0].astype(int) < workdf.iloc[o, 0].astype(int):
+        workdf.iloc[o, 11] = workdf.iloc[o-1, 11]
     else:
-        workdf.iloc[i, 11] = i
+        workdf.iloc[o, 11] = o
 print("truncated final_DH with partids column: {}".format(workdf))
 
 
@@ -135,16 +135,16 @@ for i in range(1, len(workdf.index)):
 
 #determines hours spent and uses that value as x-axis to plot, places into column 19
 workdf["TimeSpent"] = 0
-for i in range(0, len(workdf.index)):
-    Sample = workdf.iloc[i, 2]
+for p in range(0, len(workdf.index)):
+    Sample = workdf.iloc[p, 2]
     if Sample.find(T1) != -1:
-        workdf.iloc[i, 19] = int(T1)
+        workdf.iloc[p, 19] = int(T1)
     elif Sample.find(T2) != -1:
-        workdf.iloc[i, 19] = int(T2)
+        workdf.iloc[p, 19] = int(T2)
     elif Sample.find(T3) != -1:
-        workdf.iloc[i, 19] = int(T3)
+        workdf.iloc[p, 19] = int(T3)
     elif Sample.find(T4) != -1:
-        workdf.iloc[i, 19] = int(T4)
+        workdf.iloc[p, 19] = int(T4)
     else:
         pass
 
